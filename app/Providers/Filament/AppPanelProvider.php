@@ -23,19 +23,16 @@ class AppPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-        ->navigationGroups([
-            'Shop',
-            'Blog',
-            'Settings',
-        ])
-    
-    #Making navigation 
             ->default()
             ->id('app')
             ->path('app')
             ->brandName('Segum.com')
             ->topNavigation()
             ->breadcrumbs(false)
+            ->renderHook(
+                'panels::body.end',
+                fn () => view('customFooter'),
+            )
             // ->login()
             ->colors([
                 'primary' => Color::Amber,

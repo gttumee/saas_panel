@@ -68,9 +68,11 @@ class PostResource extends Resource
                 'xl' => 3,
                 ])
             ->actions([
-                Tables\Actions\Action::make('share')
-                ->label('Demo үзэх')
-                ->color('info')
+                Tables\Actions\Action::make('detail')
+                ->label('Дэлгэрэнгүй')
+                ->button(),
+                Tables\Actions\Action::make('demo')
+                ->label('Туршиж үзэх')
                 ->button()
             ]);
     }
@@ -88,14 +90,6 @@ class PostResource extends Resource
             'index' => Pages\ListPosts::route('/'),
             'create' => Pages\CreatePost::route('/create'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
-        ];
-    }
-
-    public static function getNavigationCreateAction(): array
-    {
-        return [
-            'label' => 'Create New Post',
-            'action' => fn () => redirect()->route('filament.resources.posts.create'),
         ];
     }
 }
