@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ContactResource\Pages;
+namespace App\Filament\Admin\Resources\AboutResource\Pages;
 
-use App\Filament\Resources\ContactResource;
+use App\Filament\Admin\Resources\AboutResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListContacts extends ListRecords
+class ListAbouts extends ListRecords
 {
-    protected static string $resource = ContactResource::class;
+    protected static string $resource = AboutResource::class;
 
     protected function getHeaderActions(): array
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Admin\Resources;
 
-use App\Filament\Resources\RequestResource\Pages;
-use App\Filament\Resources\RequestResource\RelationManagers;
-use App\Models\Request;
+use App\Filament\Admin\Resources\AboutResource\Pages;
+use App\Filament\Admin\Resources\AboutResource\RelationManagers;
+use App\Models\About;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,14 +13,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RequestResource extends Resource
+class AboutResource extends Resource
 {
-    protected static ?string $model = Request::class;
-    protected static ?string $navigationLabel = 'Програм захиалга';
-    protected static ?int $navigationSort = 3;
+    protected static ?string $model = About::class;
 
-
-    protected static ?string $navigationIcon = 'heroicon-m-pencil-square';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
@@ -59,9 +56,9 @@ class RequestResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRequests::route('/'),
-            'create' => Pages\CreateRequest::route('/create'),
-            'edit' => Pages\EditRequest::route('/{record}/edit'),
+            'index' => Pages\ListAbouts::route('/'),
+            'create' => Pages\CreateAbout::route('/create'),
+            'edit' => Pages\EditAbout::route('/{record}/edit'),
         ];
     }
 }

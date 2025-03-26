@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AboutResource\Pages;
-use App\Filament\Resources\AboutResource\RelationManagers;
-use App\Models\About;
+use App\Filament\Resources\BlogResource\Pages;
+use App\Filament\Resources\BlogResource\RelationManagers;
+use App\Models\Blog;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,14 +13,14 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AboutResource extends Resource
+class BlogResource extends Resource
 {
-    protected static ?string $model = About::class;
-    protected static ?string $navigationLabel = 'Бидний тухай';
-    protected static ?int $navigationSort = 3;
-
-
-    protected static ?string $navigationIcon = 'heroicon-c-cursor-arrow-ripple';
+    protected static ?string $model = Blog::class;
+    protected static ?string $modelLabel = 'Блог';
+    protected static ?string $navigationLabel = 'Блог';
+    protected static ?int $navigationSort = 4;
+    protected static ?string $pluralModelLabel = 'Блог';
+    protected static ?string $navigationIcon = 'heroicon-s-fire';
 
     public static function form(Form $form): Form
     {
@@ -40,12 +40,6 @@ class AboutResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
             ]);
     }
 
@@ -59,9 +53,9 @@ class AboutResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAbouts::route('/'),
-            'create' => Pages\CreateAbout::route('/create'),
-            'edit' => Pages\EditAbout::route('/{record}/edit'),
+            'index' => Pages\ListBlogs::route('/'),
+            'create' => Pages\CreateBlog::route('/create'),
+            'edit' => Pages\EditBlog::route('/{record}/edit'),
         ];
     }
 }

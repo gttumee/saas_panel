@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\AboutResource\Pages;
+namespace App\Filament\Admin\Resources\AboutResource\Pages;
 
-use App\Filament\Resources\AboutResource;
+use App\Filament\Admin\Resources\AboutResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 

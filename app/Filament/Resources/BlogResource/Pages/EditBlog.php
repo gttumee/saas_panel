@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ContactResource\Pages;
+namespace App\Filament\Resources\BlogResource\Pages;
 
-use App\Filament\Resources\ContactResource;
+use App\Filament\Resources\BlogResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditContact extends EditRecord
+class EditBlog extends EditRecord
 {
-    protected static string $resource = ContactResource::class;
+    protected static string $resource = BlogResource::class;
 
     protected function getHeaderActions(): array
     {
