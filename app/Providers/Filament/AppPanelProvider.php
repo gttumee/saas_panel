@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Admin\Resources\AboutResource;
+use App\Filament\Pages\Softrequest;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -28,7 +29,7 @@ class AppPanelProvider extends PanelProvider
             ->default()
             ->id('app')
             ->path('app')
-            ->brandName('Segum.com')
+            ->brandName('SENGUM')
             ->topNavigation()
             ->breadcrumbs(false)
             ->renderHook(

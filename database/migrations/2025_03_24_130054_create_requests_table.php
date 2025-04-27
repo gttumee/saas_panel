@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
-            $table->text('content');
+            $table->string('price')->nullable();
+            $table->string('period')->nullable();
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

@@ -7,10 +7,12 @@ use App\Filament\Admin\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\Database\Eloquent\Builder;
@@ -19,8 +21,11 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Програм';
+    protected static ?string $modelLabel = 'Програм';
+    protected static ?string $pluralModelLabel = 'Програм';
+    protected static ?string $navigationIcon = 'heroicon-s-squares-plus';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -28,7 +33,7 @@ class PostResource extends Resource
             ->schema([
                TextInput::make('name'),
                FileUpload::make('image'),
-               TextInput::make('detail'),
+               RichEditor::make('detail'),
                TextInput::make('link'),
             ]);
     }
@@ -37,7 +42,8 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name'),
+                TextColumn::make('detail')
             ])
             ->filters([
                 //
