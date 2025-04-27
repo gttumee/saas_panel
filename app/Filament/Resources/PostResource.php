@@ -76,7 +76,7 @@ class PostResource extends Resource
                 ->button(),
                 Tables\Actions\Action::make('demo')
                 ->label('Туршиж үзэх')
-                ->url('https://gogo.mn') 
+                ->url(fn (Post $record) => $record->link)
                 ->openUrlInNewTab()
                 ->button()
             ]);
@@ -106,7 +106,7 @@ class PostResource extends Resource
                             Actions::make([
                                 Action::make('star')
                                     ->label('Туршиж үзэх')
-                                    ->url('https://gogo.mn') 
+                                    ->url(fn (Post $record) => $record->link)
                                     ->openUrlInNewTab(), 
                             ]),
                     ])
