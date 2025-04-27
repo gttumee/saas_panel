@@ -24,7 +24,7 @@ class BlogResource extends Resource
     protected static ?int $navigationSort = 4;
     protected static ?string $pluralModelLabel = 'Блог';
     protected static ?string $navigationIcon = 'heroicon-s-fire';
-
+    
     public static function form(Form $form): Form
     {
         return $form

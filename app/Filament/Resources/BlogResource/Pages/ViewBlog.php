@@ -9,4 +9,9 @@ use Filament\Resources\Pages\ViewRecord;
 class ViewBlog extends ViewRecord
 {
     protected static string $resource = BlogResource::class;
+
+    public function getTitle(): string
+    {
+        return static::$modelLabel ?? 'Блог';
+    }
 }
