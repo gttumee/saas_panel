@@ -52,15 +52,7 @@ class PostResource extends Resource
                         Tables\Columns\TextColumn::make('name')
                             ->weight(FontWeight::Bold)
                     ]),
-                ])->space(3),
-                    Tables\Columns\Layout\Panel::make([
-                    Tables\Columns\Layout\Split::make([
-                    Tables\Columns\ColorColumn::make('color')
-                            ->grow(false),
-                        Tables\Columns\TextColumn::make('description')
-                            ->color('gray'),
-                    ]),
-                ])->collapsible(),
+                ])
             ])
             ->filters([
                 //

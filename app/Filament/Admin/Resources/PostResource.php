@@ -43,7 +43,7 @@ class PostResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
-                TextColumn::make('detail')
+                TextColumn::make('created_at')
             ])
             ->filters([
                 //
