@@ -64,7 +64,7 @@ class PostResource extends Resource
             ->actions([
                 Tables\Actions\Action::make('detail')
                 ->label('Дэлгэрэнгүй')
-                ->url(fn (Post $record) => url("/app/posts/{$record->id}"))
+                ->url(fn (Post $record) => url("/posts/{$record->id}"))
                 ->button(),
                 Tables\Actions\Action::make('demo')
                 ->label('Туршиж үзэх')
