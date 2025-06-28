@@ -29,7 +29,7 @@ class AppPanelProvider extends PanelProvider
             ->default()
             ->id('app')
             ->path('')
-            ->brandName('SENGUM')
+            ->brandName('NIMOKUN')
             ->topNavigation()
             ->breadcrumbs(false)
             ->renderHook(

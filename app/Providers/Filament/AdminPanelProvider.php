@@ -25,7 +25,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->id('admin')
             ->path('admin')
-            ->brandName('SEGUM.COM MANAGEMENT')
+            ->brandName('NIMOKUN MANAGEMENT')
             ->login()
             ->colors([
                 'primary' => Color::Amber,
