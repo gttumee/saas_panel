@@ -59,10 +59,6 @@ class BlogResource extends Resource
                 ->label('Дэлгэрэнгүй')
                 ->url(fn (Blog $record) => url("/blogs/{$record->id}"))
                 ->button(),
-                Tables\Actions\Action::make('facebook')
-                ->label('Share')
-                ->color('info')
-                ->button(),
             ]);
     }
     
